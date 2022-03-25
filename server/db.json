@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "title": "Get Out of Your Own Way",
+      "price": "$13.39",
+      "rating": "3",
+      "imageURL" : "https://images-na.ssl-images-amazon.com/images/I/81q0fpwFa4L.jpg"
+    },
+    {
+      "id": 2,
+      "title": "What Happened to You?",
+      "price": "$18.89",
+      "rating": "3",
+      "imageURL" : "https://images-na.ssl-images-amazon.com/images/I/713XUMrojkL.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Never Good Enough",
+      "price": "$14.95",
+      "rating": "3",
+      "imageURL" : "https://images-na.ssl-images-amazon.com/images/I/71U186jLOXL.jpg"
+    }
+  ]

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+  </head>
+  <body class="container">
+    <button id="complimentButton">Get a compliment</button>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("complimentButton").onclick = function () {
+        axios.get("http://localhost:4000/api/compliment/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+    </script>
+    <button id="fortuneButton">Get a Fortune</button>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("fortuneButton").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+    </script>
+    <h1>List Of Affirmations</h1>
+    <ul id="people" class=""></ul>
+
+    <button id="button">Get Positive Affirmations</button>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("button").onclick = function () {
+        axios
+          .get("http://localhost:4000/api/affirmations")
+          .then(function (response) {
+            const data = response.data;
+            document.getElementById("people").innerHTML = data
+              .map(function (person) {
+                return '<li class="row">' + person;
+              })
+              .join("");
+          })
+          .catch(function (err) {
+            document.getElementById("people").innerHTML =
+              '<li class="text-danger">' + err.message + "</li>";
+          });
+      };
+    </script>
+        <form>
+          <input 
+              type='text'
+              id="title"
+              placeholder="Title Of Book"/>
+          <input 
+              type='text'
+              id="price"
+              placeholder='Price Of Book'/>
+          <input 
+              type='text'
+              id="img"
+              placeholder='Paste an image URL'/>
+          <button>add book</button>
+      </form>
+  
+      <section id="books-container"></section>
+  
+      </main>
+  
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="main.js"></script>
+  </body>
+</html>
