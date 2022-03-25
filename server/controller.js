@@ -15,10 +15,11 @@ module.exports = {
     },
 
     createBook: (req, res) => {
-        let { title, price, imageURL } = req.body
+        let { title, price, imageURL, rating } = req.body
         let newBook = {
             id: globalID,
             title,
+            rating,
             price,
             imageURL
         }
@@ -40,10 +41,10 @@ module.exports = {
             res.status(400).send('1 is the lowest rating')
         } else if (type === 'plus'){
             books[index].rating++
-            res.status(200).send(movies)
+            res.status(200).send(boos)
         } else if (type === 'minus'){
             books[index].rating--
-            res.status(200).send(movies)
+            res.status(200).send(boos)
         } else {
             res.status(400)
         }

@@ -35,18 +35,18 @@ function createBookCard(book) {
     const bookCard = document.createElement('div')
     bookCard.classList.add('book-card')
 
-    bookCard.innerHTML = `<img alt='book cover image' src=${book.imageURL} class="book-cover-image"/>
-    <p class="book">${book.title}</p>
+    bookCard.innerHTML = `<img alt='book cover' src=${book.imageURL} class="book-cover"/>
+    <p class="book-title">${book.title}</p>
     <div class="btns-container">
         <button onclick="updateBook(${book.id}, 'minus')">-</button>
-        <p class="book-price">$${book.price}</p>
+        <p class="book-rating">${book.rating} stars</p>
         <button onclick="updateBook(${book.id}, 'plus')">+</button>
     </div>
     <button onclick="deleteBook(${book.id})">delete</button>
     `
 
 
-    housesContainer.appendChild(bookCard)
+    booksContainer.appendChild(bookCard)
 }
 
 function displayBooks(arr) {
